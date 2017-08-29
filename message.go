@@ -23,7 +23,7 @@ type Message struct {
 	ContentAvailable      bool                   `json:"content_available,omitempty"`
 	Data                  map[string]interface{} `json:"data,omitempty"`
 	DelayWhileIdle        bool                   `json:"delay_while_idle,omitempty"`
-	TimeToLive            int                    `json:"time_to_live,omitempty"`
+	TimeToLive            int                    `json:"time_to_live"`
 	RestrictedPackageName string                 `json:"restricted_package_name,omitempty"`
 	DryRun                bool                   `json:"dry_run,omitempty"`
 	Priority              Priority               `json:"priority,omitempty"`
