@@ -203,7 +203,7 @@ func checkMessage(msg *Message) error {
 		return errors.New("the message must specify at least one registration ID")
 	} else if len(msg.RegistrationIDs) > 1000 {
 		return errors.New("the message may specify at most 1000 registration IDs")
-	} else if msg.TimeToLive < 0 || 2419200 < msg.TimeToLive {
+	} else if msg.TimeToLive != nil && (*msg.TimeToLive < 0 || 2419200 < *msg.TimeToLive) {
 		return errors.New("the message's TimeToLive field must be an integer " +
 			"between 0 and 2419200 (4 weeks)")
 	}
